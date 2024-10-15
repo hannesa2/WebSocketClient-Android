@@ -15,7 +15,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var webSocketClient: ChatWebSocketClient
+    private lateinit var chatWebSocketClient: ChatWebSocketClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val serverUri = URI(getString(R.string.server_url))
 
-        webSocketClient = ChatWebSocketClient(serverUri) { message ->
+        chatWebSocketClient = ChatWebSocketClient(serverUri) { message ->
 
             runOnUiThread {
                 run {
@@ -41,12 +41,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         listview1.adapter = ChatAdapter()
-        webSocketClient.connect()
+        chatWebSocketClient.connect()
 
 
         btnSend.setOnClickListener {
             try {
-                webSocketClient.sendMessage(editMsg.text.toString())
+                chatWebSocketClient.sendMessage(editMsg.text.toString())
                 editMsg.setText("")
             } catch (e: Exception) {
                 Timber.e(e)
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        webSocketClient.close()
+        chatWebSocketClient.close()
     }
 
 
