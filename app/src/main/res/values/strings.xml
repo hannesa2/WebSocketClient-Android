@@ -1,0 +1,8 @@
+<resources>
+<!--    <string name="server_url" translatable="false">wss://osc-ws-bridge-main.k8s.betalabs.rocks/ws/WebSocketClient</string>-->
+<!--    <string name="server_url" translatable="false">ws://127.0.0.1:8000/ws/emulator</string>-->
+    <string name="server_url" translatable="false">ws://10.0.2.2:8000/ws/emulator</string>
+    <string name="app_name">WebSocket-client</string>
+    <string name="send">Send</string>
+    <string name="enter_message">Enter Message</string>
+</resources>
