@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'info.hannes.websocket_client'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.encept.websocket_client"
         minSdk 24
-        targetSdk 35
+        targetSdk 36
         versionCode 1
         versionName "1.0"
     }
